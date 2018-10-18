@@ -20,7 +20,7 @@ class GroupExtend(models.Model):
 
 
 
-class Hood(models.Model):
+class Jirani(models.Model):
     name = models.CharField(max_length=90)
     location = models.CharField(max_length=90)
     count = models.IntegerField()
@@ -29,24 +29,24 @@ class Hood(models.Model):
     def __str__(self):
         return self.name
 
-    def create_hood(self):
+    def create_jirani(self):
         self.save
 
-    def delete_hood(self):
+    def delete_jirani(self):
         self.delete
 
     @classmethod
-    def get_hood(cls):
+    def get_jirani(cls):
         hood = cls.objects.all()
         return hood
 
     @classmethod
-    def find_hood(cls, hood_id):
+    def find_jirani(cls, hood_id):
         query = cls.objects.filter(user__name__icontains=hood_id)
         return query
 
     @classmethod
-    def update_hood(cls):
+    def update_jirani(cls):
         hoody = cls.objects.all()
         return hoody
 
@@ -59,7 +59,7 @@ class Hood(models.Model):
 
 class Business(models.Model):
     name = models.CharField(max_length=90)
-    hood = models.ForeignKey(Hood, on_delete=models.CASCADE, null=True)
+    jirani = models.ForeignKey(Jirani, on_delete=models.CASCADE, null=True)
     email = models.EmailField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
@@ -93,13 +93,11 @@ class Profile(models.Model):
     name = models.CharField(max_length=90)
     image = models.ImageField(upload_to='profile/', null=True, blank=True)
     id = models.IntegerField
-    hood = models.ForeignKey(Hood, on_delete=models.CASCADE, null=True)
+    jirani = models.ForeignKey(Jirani, on_delete=models.CASCADE, null=True)
     email = models.EmailField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
-    def __str__(self):
-        return str(self.image)
-
+    
     def create_profile(self):
         self.save
 
@@ -119,15 +117,18 @@ class Profile(models.Model):
         profile = Profile.objects.all()
         return profile
 
+    def __str__(self):
+        return str(self.image)
+
 
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=90, null=True)
+    name = models.CharField(max_length=90, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='post/', null=True, blank=True)
     caption = models.CharField(max_length=100)
-    hood = models.ForeignKey(Hood, on_delete=models.CASCADE, null=True)
+    jirani = models.ForeignKey(Jirani, on_delete=models.CASCADE, null=True)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
