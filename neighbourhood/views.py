@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404
-from .models import Project, Profile, Review
+from .models import Jirani, Profile
 from django.contrib.auth import login, authenticate
 from .forms import SignupForm
 from django.contrib.sites.shortcuts import get_current_site
@@ -11,7 +11,6 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-# Create your views here.
 
 
 def signup(request):
@@ -21,6 +20,7 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
+            # profile = Profile(user=user)
             current_site = get_current_site(request)
             mail_subject = 'Activate your blog account.'
             message = render_to_string('acc_active_email.html', {
@@ -55,3 +55,12 @@ def activate(request, uidb64, token):
 
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+@login_required(login_url='/accounts/login/')
+def home(request):
+    profile = Jirani.objects.all()
+    for x in profile:
+        print(x)
+    print(request.user.username)
+    return render(request, 'home.html', {"profile":profile })

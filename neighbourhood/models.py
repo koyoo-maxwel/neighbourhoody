@@ -92,11 +92,13 @@ class Business(models.Model):
 # user profile model
 class Profile(models.Model):
     name = models.CharField(max_length=90)
-    image = models.ImageField(upload_to='profile/', null=True, blank=True)
+    image = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
     id = models.IntegerField
     jirani = models.ForeignKey(Jirani, on_delete=models.CASCADE, null=True)
     email = models.EmailField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+    
 
     def create_profile(self):
         self.save

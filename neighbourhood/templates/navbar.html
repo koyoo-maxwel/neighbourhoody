@@ -1,0 +1,23 @@
+{% load bootstrap4 %} {% load static %}
+{% if user.is_authenticated %}
+
+
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <ul>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Group Extend</a>
+            <a href="#">Neighbours</a>
+            <a href="#">Post</a>
+            <a href="#">Business</a>
+            <a href="">Profile</a>
+        </ul>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+    {% endif %}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+</body>

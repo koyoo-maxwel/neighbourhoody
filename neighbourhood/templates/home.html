@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load bootstrap4 %}
+{% block content %}
+
+{{block.super}}
+
+{% for x in profile %}
+{% if profile%}
+<p>count:{{x.count}}</p>
+<p>locale:{{x.location}}</p>
+<p>name:{{x.name}}</p>
+
+
+
+
+{% endfor %}
+{% endblock%}

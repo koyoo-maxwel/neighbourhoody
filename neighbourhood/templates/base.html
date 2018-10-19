@@ -9,7 +9,7 @@
     <title>{{title}}</title>
 
     {% else %}
-    <title></title>
+    <title>N_Hoody</title>
     <link href="https://fonts.googleapis.com/css?family=Charmonman|KoHo" rel="stylesheet">
 
     {% endif %}
@@ -32,10 +32,22 @@
 
     {% endblock %}
     {% block scripts %}
+
+
+    <script type="text/javascript">
+        function openNav() {
+            document.getElementById( "mySidenav" ).style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById( "mySidenav" ).style.width = "0";
+        }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
-  
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
