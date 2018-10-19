@@ -35,18 +35,18 @@ class Jirani(models.Model):
 
     @classmethod
     def get_jirani(cls):
-        hood = cls.objects.all()
-        return hood
+        jirani = cls.objects.all()
+        return jirani
 
     @classmethod
-    def find_jirani(cls, hood_id):
-        query = cls.objects.filter(user__name__icontains=hood_id)
+    def find_jirani(cls, jirani_id):
+        query = cls.objects.filter(user__name__icontains=jirani_id)
         return query
 
     @classmethod
     def update_jirani(cls):
-        hoody = cls.objects.all()
-        return hoody
+        jirani = cls.objects.all()
+        return jirani
 
     @classmethod
     def update_count(cls):
