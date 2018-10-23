@@ -85,7 +85,7 @@ This project uses major technologies which are :
 
 ## Support and Contacts
 
-In case You have any issues using this code please do no hesitate to get in touch with me through mburubeatricewanjiru@gmail.com or leave a comment here on github.
+In case You have any issues using this code please do no hesitate to get in touch with me through maxwell@juantechno.com or leave a comment here on github.
 
 ## License
 
