@@ -89,4 +89,4 @@ In case You have any issues using this code please do no hesitate to get in touc
 
 ## License
 
-Copyright MIT [LiCENSE](./LICENSE) (c) 2017 [Beatrice Wanjiru](https://github.com/mburuBeatrice)
+Copyright MIT [LiCENSE](LICENSE) (c) 2018 [Koyoo maxwel](https://github.com/koyoo-maxwel)
