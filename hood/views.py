@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .models import Post,Profile,Neighbourhood,Business,Join,Comments
 from django.contrib import messages
-from . forms import ProfileForm,BusinessForm,PostForm,CreateHoodForm,CommentForm
+from . forms import ProfileForm,BusinessForm,PostForm,MabratheForm,CommentForm
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -110,7 +110,7 @@ def display_business(request):
 @login_required(login_url='/accounts/login/')
 def createHood(request):
     if request.method == 'POST':
-        form = CreateHoodForm(request.POST)
+        form = MabratheForm(request.POST)
         if form.is_valid():
             hood = form.save(commit = False)
             hood.user = request.user
@@ -118,7 +118,7 @@ def createHood(request):
             messages.success(request, 'You Have succesfully created a hood.You may now join your neighbourhood')
             return redirect('hoods')
     else:
-        form = CreateHoodForm()
+        form = MabratheForm()
         return render(request,'create.html',{"form":form})
 
 

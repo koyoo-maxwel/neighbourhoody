@@ -48,6 +48,8 @@ class Neighbourhood(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length = 65, blank=True)
+    profile_pic = models.ImageField(
+        upload_to='prof-picture/', null=True, blank=True, default=0)
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     hood = models.ForeignKey(Neighbourhood, blank=True, null=True)
     bio = models.TextField(max_length=200)

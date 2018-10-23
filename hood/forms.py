@@ -14,7 +14,7 @@ class ProfileForm(forms.ModelForm):
         fields = ['name','bio']
 
 
-class CreateHoodForm(forms.ModelForm):
+class MabratheForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
         fields = ['name','loc','occupants']
