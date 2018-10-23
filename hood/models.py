@@ -21,6 +21,9 @@ class Neighbourhood(models.Model):
         ('Mnarani', 'Mnarani'),
         ('Bofa', 'Bofa')
     )
+
+    hood_pic = models.ImageField(
+        upload_to='hood_pic/', null=True, blank=True, default=0)
     loc  = models.CharField(max_length=65, choices=locations)
     occupants = models.PositiveIntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
