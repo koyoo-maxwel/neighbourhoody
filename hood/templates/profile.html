@@ -7,36 +7,36 @@
 {% block content %}
 {{ form.media }}
 
-    <style>
-     .jumbotron{
+<style>
+    .jumbotron {
 
         width: 70%;
         margin-left: 1%;
         background-color: white;
         text-align: center;
     }
-
 </style>
 
 
-    <div class="container">
-            <div class="row">
-                <div class="jumbotron">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <p>{{profile_details.bio}}</p>
-                            <p>{{ profile_details.user }}</p>
+<div class="container" style="padding-top:30px;">
+    <div class="row">
+        <div class="jumbotron">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+
+                    <p>{{ profile_details.user }} you joined this Neighbourhood on: {{request.user.date_joined}}</p>
 
 
-                        </li>
+
+                </li>
 
 
-                    </ul>
+            </ul>
 
-                    <p><a href= "{% url 'business' %}">Create a business</a></p>
-                    <p><a href= "{% url 'business' %}">Make a Post</a></p>
-                </div>
-            </div>
+            <p><a href="{% url 'business' %}">Create a business</a></p>
+            <p><a href="{% url 'business' %}">Make a Post</a></p>
+        </div>
     </div>
+</div>
 
 {% endblock %}
