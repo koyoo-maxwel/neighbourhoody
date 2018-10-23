@@ -12,14 +12,14 @@ class Neighbourhood(models.Model):
     name = models.CharField(max_length = 65)
     locations = (
         ('Nairobi', 'Nairobi'),
-        ('Zurich', 'Zurich'),
-        ('Paris', 'Paris'),
-        ('Munich', 'Munich'),
-        ('Tokyo', 'Tokyo'),
-        ('London', 'London'),
-        ('Melbourne', 'Melbourne'),
-        ('Sydney', 'Sydney'),
-        ('Berlin', 'Berlin')
+        ('Kariobangi', 'Kariobangi'),
+        ('Kilifi-Green Estate', 'Kilifi-Green Estate'),
+        ('Kileleshwa', 'Kileleshwa'),
+        ('Muhoroni', 'Muhoroni'),
+        ('Kisumu', 'Kisumu'),
+        ('Majengo', 'Majengo'),
+        ('Mnarani', 'Mnarani'),
+        ('Bofa', 'Bofa')
     )
     loc  = models.CharField(max_length=65, choices=locations)
     occupants = models.PositiveIntegerField()
