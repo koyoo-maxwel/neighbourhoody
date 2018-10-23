@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" id="navMain">
-    <a class="" href="/"><i class="fa fa-home" style="font-size:30px;color:red"></i></a>
+    <a class="" href="/"><i class="fa fa-home" style="font-size:30px;color:white"></i></a>
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarResponsive">
             {% if user.is_authenticated %}
@@ -22,7 +22,7 @@
                                     style="font-size:30px;color:violet"><small>{{ user.username }}</small></i></a>
                             <hr>
 
-                        <li><a href="{% url 'createHood' %}" style="font-size:px;color:violet; display: inline-block;">
+                        <li><a href="{% url 'createHood' %}" style="font-size:30px;color:violet; display: inline-block; text-decoration: none;">
                                 Create Hood</a></i></li>
                         </li>
                     </ul>
@@ -45,7 +45,7 @@
                 {%endif%}
                 <ul class="navbar-nav ml-auto" style="list-style: none">
                     <li>
-                        <i class="fa fa-sign-out" style="font-size:30px;color:red" aria-hidden="true"></i><a href="/logout">Logout</a>
+                        <i class="fa fa-sign-out" style="font-size:30px;color:white;" aria-hidden="true"></i><a href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>

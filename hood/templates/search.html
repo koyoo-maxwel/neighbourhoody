@@ -4,36 +4,35 @@
 
 <div class="container">
 	<div class="row">
-		<h3>Search results for the search term: <strong>{{message}}</strong></h3>
+		<div class="div col-md-4">
 
-		{%if hoods%}
-		{% for hood in hoods %}
-		<div class="card">
+			<h3>Search results for: <strong>{{message}}</strong> has been found</h3>
 
-			<div class="card-title">
-				{{hood.name}}
+			{%if hoods%}
+			{% for hood in hoods %}
+			<div class="card">
+
+				<div class="card-title">
+					<h2>{{hood.name}}</h2>
+				</div>
+				<div class="card-body">
+					<p>{{hood.loc}}</p>
+
+				</div>
+
 			</div>
-			<div class="card-body">
-				<p>{{hood.loc}}</p>
 
+			{%endfor%}
+			{% else %}
+			<div class="col-md-6">
+				<h4 class="text-center">No neighbourhood with the name <strong>{{message}}</strong> exists! You can however create
+					where you live here...<a href="{% url 'createHood' %}">here</a></h4>
 			</div>
+			{%endif%}
+
 
 		</div>
-
-		{%endfor%}
-		{% else %}
-		<div class="col-md-6">
-			<h4 class="text-center">No neighbourhood with the name <strong>{{message}}</strong> exists! You can however create
-				where you live here...<a href="{% url 'createHood' %}">here</a></h4>
-		</div>
-		{%endif%}
-
-
 
 	</div>
 </div>
-
-
-
-
 {%endblock%}
