@@ -109,13 +109,15 @@ def display_business(request):
 
 @login_required(login_url='/accounts/login/')
 def createHood(request):
+    form = MabratheForm()
     if request.method == 'POST':
-        form = MabratheForm(request.POST)
+        form = MabratheForm(request.POST,request.FILES)
         if form.is_valid():
-            hood = form.save(commit = False)
+            print('x')
+            hood = form.save(commit= False)
+            
             hood.user = request.user
             hood.save()
-            messages.success(request, 'You Have succesfully created a hood.You may now join your neighbourhood')
             return redirect('hoods')
     else:
         form = MabratheForm()

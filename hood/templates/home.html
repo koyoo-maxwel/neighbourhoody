@@ -11,29 +11,29 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                  <p> {{hood.name.capitalize}} Neighbourhood</p>
-                  <div class="card-body" style="width: auto">
-                    <p>{{hood.occupants}} Occupants currently live here </p>
-        
-                    <p> <i class="fa fa-map-marker" aria-hidden="true"> Location: {{ hood.loc }}</i></p>
-                    <a href=" {% url 'joinHood' hood.id %}" class="btn btn-sm btn-success">Join</a>
-                    <hr>
-                    <a class="btn btn-sm btn-success" href="{% url 'newpost' %}">Create a Post</a>
-        
-                  </div>
-                </div>
+          <div class="card">
+            <div class="card-header">
+              <p> {{hood.name.capitalize}} Neighbourhood</p>
+              <div class="card-body" style="width: auto">
+                <p>{{hood.occupants}} Occupants currently live here </p>
+
+                <p> <i class="fa fa-map-marker" aria-hidden="true"> Location: {{ hood.location }}</i></p>
+                <a href=" {% url 'joinHood' hood.id %}" class="btn btn-sm btn-success">Join</a>
+                <hr>
+                <a class="btn btn-sm btn-success" href="{% url 'newpost' %}">Create a Post</a>
+
               </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15955.167726591344!2d36.77858156977538!3d-1.299649699999992!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1540290458818"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15955.167726591344!2d36.77858156977538!3d-1.299649699999992!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1540290458818"
             width="600" height="450" frameborder="0"></iframe>
         </div>
       </div>
-      
 
-      
+
+
 
     </div>
 

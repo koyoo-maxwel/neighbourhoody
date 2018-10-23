@@ -12,7 +12,7 @@
 				</legend>
 			</div>
 			<div class="panel-body">
-				<form action="{% url 'createHood' %}" method="post">
+				<form action="{% url 'createhood' %}" method="POST">
 
 					{%csrf_token%}
 					{% bootstrap_form form %}
